@@ -500,6 +500,21 @@ body {
   font-size: 18px;
   font-weight: 700;
 }
+.site-header .logo-mark {
+  border: 1px solid rgba(18, 32, 25, .14);
+  background: linear-gradient(
+    to bottom,
+    #151515 0%,
+    #151515 33.333%,
+    #dd0000 33.333%,
+    #dd0000 66.666%,
+    #ffce00 66.666%,
+    #ffce00 100%
+  );
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .9);
+  box-shadow: 0 4px 12px rgba(18, 32, 25, .14);
+}
 .logo-type { font-size: 14px; font-weight: 800; }
 .logo-type i { font-family: inherit; font-size: inherit; font-style: normal; font-weight: 500; color: #69746d; }
 .desktop-nav { gap: 5px; }
