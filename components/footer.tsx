@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import { services } from "@/lib/services";
 
 export function Footer() {
   return (
@@ -9,21 +8,21 @@ export function Footer() {
         <div className="footer-statement">
           <div className="logo footer-logo">
             <span className="logo-mark">M</span>
-            <span className="logo-type">Mirza <i>Consultancy</i></span>
+            <span className="logo-type">Morgen<span>Pilot</span></span>
           </div>
-          <h2>Move forward,<br /><em>with a plan.</em></h2>
+          <h2>Your copilot for<br /><em>what comes next.</em></h2>
         </div>
         <div className="footer-links">
           <div>
-            <p className="footer-label">Services</p>
-            {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`}>{service.name}</Link>
-            ))}
+            <p className="footer-label">Practices</p>
+            <Link href="/study-career">Study &amp; Career</Link>
+            <Link href="/ai-business">AI for Business</Link>
+            <Link href="/about">About the founders</Link>
           </div>
           <div>
             <p className="footer-label">Connect</p>
             <Link href="/contact">Book a guidance call</Link>
-            <a href="mailto:hello@mirzaconsultancy.de">Email us <ArrowUpRight size={14} /></a>
+            <Link href="/contact">Start a conversation <ArrowUpRight size={14} /></Link>
             <a href="#">LinkedIn <ArrowUpRight size={14} /></a>
           </div>
           <div>
@@ -35,8 +34,8 @@ export function Footer() {
         </div>
       </div>
       <div className="footer-bottom shell">
-        <p>© 2026 Mirza Consultancy</p>
-        <p>Berlin, Germany · Working internationally</p>
+        <p>© 2026 MorgenPilot</p>
+        <p>Berlin, Germany · Talent and technology</p>
       </div>
     </footer>
   );

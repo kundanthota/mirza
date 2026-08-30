@@ -4,7 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { services } from "@/lib/services";
+
+const navigation = [
+  { href: "/study-career", label: "Study & Career" },
+  { href: "/ai-business", label: "AI for Business" },
+  { href: "/about", label: "About" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -15,20 +20,20 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link href="/" className="logo" aria-label="Mirza Consultancy home">
+        <Link href="/" className="logo" aria-label="MorgenPilot home">
           <span className="logo-mark">M</span>
-          <span className="logo-type">Mirza <i>Consultancy</i></span>
+          <span className="logo-type">Morgen<span>Pilot</span></span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link href="/" className={pathname === "/" ? "active" : ""}>Home</Link>
-          {services.map((service) => (
+          {navigation.map((item) => (
             <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className={pathname === `/services/${service.slug}` ? "active" : ""}
+              key={item.href}
+              href={item.href}
+              className={pathname.startsWith(item.href) ? "active" : ""}
             >
-              {service.short}
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -51,9 +56,9 @@ export function Header() {
       <div id="mobile-nav" className={`mobile-nav ${open ? "open" : ""}`}>
         <div className="mobile-nav-inner">
           <Link href="/" className="mobile-home">Home</Link>
-          {services.map((service) => (
-            <Link key={service.slug} href={`/services/${service.slug}`}>
-              <span>{service.index}</span>{service.name}
+          {navigation.map((item, index) => (
+            <Link key={item.href} href={item.href}>
+              <span>0{index + 1}</span>{item.label}
             </Link>
           ))}
           <Link href="/contact" className="button button-dark">Start a conversation</Link>

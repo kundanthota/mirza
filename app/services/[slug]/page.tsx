@@ -115,7 +115,7 @@ export default async function ServicePage({ params }: Props) {
           </div>
           {service.slug !== "engineering" && (
             <p className="disclaimer">
-              Mirza Consultancy provides preparation and guidance. Decisions on visas, residence permits, admissions and employment remain with the responsible authorities, institutions and employers.
+              MorgenPilot provides preparation and process guidance, not legal advice. Decisions on visas, residence permits, admissions and employment remain with the responsible authorities, institutions and employers.
             </p>
           )}
         </div>

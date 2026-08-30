@@ -19,10 +19,10 @@ const serif = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mirza Consultancy — Your route to Germany",
-    template: "%s — Mirza Consultancy",
+    default: "MorgenPilot — Talent and technology for Germany",
+    template: "%s — MorgenPilot",
   },
-  description: "Personal guidance for visas, careers, Ausbildung, German language and digital engineering in Germany.",
+  description: "Study and career guidance for international talent, and practical AI consulting for German businesses.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

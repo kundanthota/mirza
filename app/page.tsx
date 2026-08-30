@@ -1,110 +1,122 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
-import { services } from "@/lib/services";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Buildings,
+  Compass,
+  GraduationCap,
+  Sparkle,
+} from "@phosphor-icons/react/dist/ssr";
 
 export default function HomePage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <>
-      <section className="home-hero">
-        <div className="hero-copy">
-          <p className="eyebrow">Visa · careers · language · technology</p>
-          <h1>A smarter way<br />to make Germany <em>happen.</em></h1>
-          <p className="hero-intro">
-            Clear advice, practical next steps and personal support for your move, studies or career in Germany.
+      <section className="mp-hero">
+        <div className="mp-hero-copy">
+          <p className="eyebrow">Berlin · Two specialist practices</p>
+          <h1>Tomorrow needs<br />a good <em>pilot.</em></h1>
+          <p className="mp-hero-intro">
+            We guide international talent toward a future in Germany—and help German businesses turn AI ambition into practical results.
           </p>
-          <div className="hero-actions">
-            <Link href="/contact" className="button button-dark">Plan my next move <ArrowUpRight size={18} /></Link>
-            <Link href="#services" className="button">View services <ArrowDown size={17} /></Link>
+          <div className="mp-hero-actions">
+            <Link href="#practices" className="button mp-primary-button">Choose your direction <ArrowRight size={18} /></Link>
+            <Link href="/about" className="button mp-ghost-button">Meet the copilots</Link>
           </div>
-          <span className="hero-note">Personal guidance · Human answers</span>
+          <div className="mp-hero-foot">
+            <span>01 · Study &amp; Career</span>
+            <span>02 · AI for Business</span>
+          </div>
         </div>
-        <div className="hero-media">
+
+        <div className="mp-hero-visual">
           <Image
             src={`${basePath}/images/mirza-journey-hero.png`}
-            alt="A professional beginning a new career journey in a modern German city"
+            alt="A professional looking toward the next stage of their future in Germany"
             fill
             priority
-            sizes="(max-width: 780px) 100vw, 54vw"
+            sizes="(max-width: 780px) 100vw, 48vw"
           />
-          <div className="hero-stamp">Your<br />move</div>
-          <span className="hero-image-caption">Berlin · Germany</span>
+          <div className="visual-shade" />
+          <div className="pilot-orbit" aria-hidden="true"><span>M</span></div>
+          <Link href="/study-career" className="flight-card flight-study">
+            <span>Route 01</span><strong>Study &amp; Career</strong><ArrowUpRight size={19} />
+          </Link>
+          <Link href="/ai-business" className="flight-card flight-ai">
+            <span>Route 02</span><strong>AI for Business</strong><ArrowUpRight size={19} />
+          </Link>
+          <span className="visual-location">52.5200° N · Berlin</span>
         </div>
       </section>
 
-      <section className="intro-band shell">
-        <div className="intro-grid">
-          <p>
-            One team for the decisions that shape your move—from choosing the right visa to building the skills and career that come next.
-          </p>
-          <h2>Everything you need to move forward—<em>connected in one place.</em></h2>
+      <section className="mp-intro shell">
+        <div className="mp-intro-label"><Compass size={24} /><span>Why MorgenPilot</span></div>
+        <h2>Different destinations.<br /><em>The same need for direction.</em></h2>
+        <p>
+          Morgen means tomorrow. Pilot means someone who helps navigate complexity. That is what connects our work with people and with businesses.
+        </p>
+      </section>
+
+      <section className="mp-practices shell" id="practices">
+        <div className="mp-section-head">
+          <div><span className="eyebrow">Choose your direction</span><h2>Two practices.<br />Built to stay focused.</h2></div>
+          <p>You always work with the founder who understands your specific journey.</p>
+        </div>
+
+        <div className="practice-choice-grid">
+          <article className="practice-choice practice-choice-study">
+            <div className="practice-choice-top"><span className="choice-number">01</span><span className="choice-icon"><GraduationCap size={30} /></span></div>
+            <div>
+              <p className="practice-kicker">For international students and talent</p>
+              <h3>Study &amp;<br />Career</h3>
+              <p className="practice-summary">From choosing the right route to building a career in Germany—with honest, practical support at every transition.</p>
+            </div>
+            <div className="practice-tags"><span>Study planning</span><span>Applications</span><span>Arrival</span><span>Career entry</span></div>
+            <Link href="/study-career" className="practice-link">Explore this practice <ArrowUpRight size={20} /></Link>
+          </article>
+
+          <article className="practice-choice practice-choice-ai">
+            <div className="practice-choice-top"><span className="choice-number">02</span><span className="choice-icon"><Sparkle size={30} /></span></div>
+            <div>
+              <p className="practice-kicker">For German SMEs and local teams</p>
+              <h3>AI for<br />Business</h3>
+              <p className="practice-summary">From identifying a valuable use case to putting a working AI pilot into your team’s hands—without the theatre.</p>
+            </div>
+            <div className="practice-tags"><span>AI roadmap</span><span>Automation</span><span>Pilots</span><span>Enablement</span></div>
+            <Link href="/ai-business" className="practice-link">Explore this practice <ArrowUpRight size={20} /></Link>
+          </article>
         </div>
       </section>
 
-      <section className="services-section shell" id="services">
-        <div className="section-rule">
-          <span>Choose your route</span>
-          <span>01—05</span>
-        </div>
-        <div className="services-list">
-          {services.map((service) => (
-            <Link
-              className="service-row"
-              href={`/services/${service.slug}`}
-              key={service.slug}
-              style={{ "--service-color": service.color } as React.CSSProperties}
-            >
-              <span className="service-index">{service.index}</span>
-              <span className="service-title">{service.name}</span>
-              <span className="service-desc">{service.intro}</span>
-              <span className="service-arrow"><ArrowUpRight size={21} /></span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="approach">
+      <section className="mp-operating-model">
         <div className="shell">
-          <div className="approach-head">
-            <h2>Real guidance.<br /><em>Zero guesswork.</em></h2>
-            <p className="approach-intro">
-              A simple, focused process that turns a complicated goal into decisions you can actually act on.
-            </p>
-          </div>
-          <div className="approach-steps">
-            <article className="approach-step">
-              <span>01 / Listen</span>
-              <h3>Start with your story.</h3>
-              <p>We look at your goals, experience, timeline and the reality of your current situation.</p>
-            </article>
-            <article className="approach-step">
-              <span>02 / Map</span>
-              <h3>See the whole route.</h3>
-              <p>You receive a direct view of the viable options, trade-offs and preparation involved.</p>
-            </article>
-            <article className="approach-step">
-              <span>03 / Move</span>
-              <h3>Take the next step.</h3>
-              <p>Move forward with a clear priority list and support at the moments that matter.</p>
-            </article>
+          <div className="mp-model-heading"><span className="eyebrow">How we work</span><h2>Close enough to listen.<br /><em>Experienced enough to lead.</em></h2></div>
+          <div className="mp-model-grid">
+            <article><span>01</span><h3>Start with reality.</h3><p>We understand where you are today before prescribing what should happen tomorrow.</p></article>
+            <article><span>02</span><h3>Make the route visible.</h3><p>You see the options, trade-offs, responsibilities and next decision in plain language.</p></article>
+            <article><span>03</span><h3>Move into action.</h3><p>We stay practical—preparing the application or building the pilot, not stopping at advice.</p></article>
           </div>
         </div>
       </section>
 
-      <section className="testimonial shell">
-        <blockquote>
-          I stopped searching in circles. For the first time, I had a plan that made sense for me.
-        </blockquote>
-        <cite>Candidate consultation · Berlin pathway</cite>
+      <section className="mp-founders-preview shell">
+        <div className="founders-copy">
+          <span className="eyebrow">Two founders, direct access</span>
+          <h2>No handoffs to a generic consulting team.</h2>
+          <p>Each MorgenPilot practice is founder-led. You speak to the person responsible for the thinking and the outcome.</p>
+          <Link href="/about" className="button button-dark">Our story <ArrowUpRight size={18} /></Link>
+        </div>
+        <div className="founder-mini-grid">
+          <article><span className="founder-mini-icon"><GraduationCap size={29} /></span><small>Copilot 01</small><h3>Study &amp; Career Lead</h3><p>International pathways, preparation and employability.</p></article>
+          <article><span className="founder-mini-icon"><Buildings size={29} /></span><small>Copilot 02</small><h3>AI &amp; Product Lead</h3><p>Applied AI, software and business transformation.</p></article>
+        </div>
       </section>
 
-      <section className="cta-panel">
-        <div className="cta-panel-inner">
-          <h2>Turn your questions<br />into a <em>clear plan.</em></h2>
-          <Link href="/contact" className="button button-light">Let&apos;s talk <ArrowUpRight size={18} /></Link>
-        </div>
+      <section className="mp-final-cta shell">
+        <div><span className="eyebrow">Ready when you are</span><h2>What does your<br />tomorrow need?</h2></div>
+        <Link href="/contact" className="button mp-primary-button">Talk to the right copilot <ArrowUpRight size={18} /></Link>
       </section>
     </>
   );

@@ -2,7 +2,6 @@
 
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { FormEvent, useState } from "react";
-import { services } from "@/lib/services";
 
 export function ContactForm() {
   const [message, setMessage] = useState("");
@@ -14,7 +13,7 @@ export function ContactForm() {
       form.reportValidity();
       return;
     }
-    setMessage("Thanks—your enquiry is ready to be connected to the consultancy inbox.");
+    setMessage("Thanks—your message is ready for the right MorgenPilot practice.");
     form.reset();
   }
 
@@ -40,7 +39,9 @@ export function ContactForm() {
         <label htmlFor="service">I&apos;m interested in</label>
         <select id="service" name="service" defaultValue="">
           <option value="" disabled>Select a service</option>
-          {services.map((service) => <option key={service.slug} value={service.slug}>{service.name}</option>)}
+          <option value="study-career">Study &amp; Career</option>
+          <option value="ai-business">AI for Business</option>
+          <option value="partnership">Partnership</option>
           <option value="guidance">I&apos;m not sure yet</option>
         </select>
       </div>
