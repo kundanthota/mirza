@@ -10,13 +10,13 @@ export function Footer() {
             <span className="logo-mark">M</span>
             <span className="logo-type">Morgen<span>Pilot</span></span>
           </div>
-          <h2>Your copilot for<br /><em>what comes next.</em></h2>
+          <h2>Your path to Germany,<br /><em>made clearer.</em></h2>
         </div>
         <div className="footer-links">
           <div>
-            <p className="footer-label">Practices</p>
-            <Link href="/study-career">Study &amp; Career</Link>
-            <Link href="/ai-business">AI for Business</Link>
+            <p className="footer-label">Explore</p>
+            <Link href="/study-career">Study in Germany</Link>
+            <Link href="/jobs">Jobs &amp; CV Audit</Link>
             <Link href="/about">About the founders</Link>
           </div>
           <div>
@@ -35,7 +35,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom shell">
         <p>© 2026 MorgenPilot</p>
-        <p>Berlin, Germany · Talent and technology</p>
+        <p>Berlin, Germany · Education and careers</p>
       </div>
     </footer>
   );

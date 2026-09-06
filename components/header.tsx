@@ -6,8 +6,8 @@ import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 
 const navigation = [
-  { href: "/study-career", label: "Study & Career" },
-  { href: "/ai-business", label: "AI for Business" },
+  { href: "/study-career", label: "Study in Germany" },
+  { href: "/jobs", label: "Jobs & CV Audit" },
   { href: "/about", label: "About" },
 ];
 
@@ -39,7 +39,7 @@ export function Header() {
         </nav>
 
         <Link href="/contact" className="header-cta">
-          Start a conversation <ArrowUpRight size={16} weight="bold" />
+          Get guidance <ArrowUpRight size={16} weight="bold" />
         </Link>
 
         <button
@@ -61,7 +61,7 @@ export function Header() {
               <span>0{index + 1}</span>{item.label}
             </Link>
           ))}
-          <Link href="/contact" className="button button-dark">Start a conversation</Link>
+          <Link href="/contact" className="button button-dark">Get guidance</Link>
         </div>
       </div>
     </header>

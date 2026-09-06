@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, GraduationCap, Sparkle } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight, Briefcase, GraduationCap } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "About the Founders",
-  description: "Two founder-led practices, one shared belief in clear direction and practical action.",
+  description: "Two founders building one connected path from education to employment in Germany.",
 };
 
 export default function AboutPage() {
@@ -12,29 +12,29 @@ export default function AboutPage() {
     <div className="about-page">
       <section className="about-hero shell">
         <span className="eyebrow">About MorgenPilot</span>
-        <h1>Two founders.<br />Two fields.<br /><em>One direction.</em></h1>
-        <p>We built MorgenPilot around a simple idea: important transitions deserve direct, specialist guidance—not a maze of handoffs.</p>
+        <h1>Two founders.<br />One path to<br /><em>Germany.</em></h1>
+        <p>We built MorgenPilot around a simple belief: choosing how to study and finding where to work should be parts of one connected plan.</p>
       </section>
 
       <section className="founder-profile-grid shell">
         <article className="founder-profile founder-study">
           <div className="founder-profile-head"><span>Copilot 01</span><GraduationCap size={34} /></div>
-          <div><p className="practice-kicker">Cofounder · Study &amp; Career</p><h2>The human journey into Germany.</h2><p>Leading the work around student pathways, candidate preparation, employability and the practical transition into education and professional life.</p></div>
-          <ul><li>Student and pathway guidance</li><li>Candidate and application preparation</li><li>Career-entry support</li><li>Partner and employer relationships</li></ul>
+          <div><p className="practice-kicker">Cofounder · Student Pathways</p><h2>The education journey into Germany.</h2><p>Leading the work around bachelor&apos;s, master&apos;s and language pathways, application preparation and the practical transition into student life.</p></div>
+          <ul><li>Programme and pathway guidance</li><li>Application preparation</li><li>Language-course planning</li><li>Arrival readiness</li></ul>
         </article>
-        <article className="founder-profile founder-ai">
-          <div className="founder-profile-head"><span>Copilot 02</span><Sparkle size={34} /></div>
-          <div><p className="practice-kicker">Cofounder · AI &amp; Product</p><h2>The technology behind better work.</h2><p>Leading the work around applied AI, software, workflow design and the path from a promising idea to a dependable business tool.</p></div>
-          <ul><li>AI strategy and opportunity mapping</li><li>Product and workflow design</li><li>Software and AI implementation</li><li>Team enablement</li></ul>
+        <article className="founder-profile founder-jobs">
+          <div className="founder-profile-head"><span>Copilot 02</span><Briefcase size={34} /></div>
+          <div><p className="practice-kicker">Cofounder · Careers &amp; Platform</p><h2>The bridge from profile to profession.</h2><p>Leading career strategy and the digital tools that help candidates understand their profile, improve their CV and focus on suitable opportunities.</p></div>
+          <ul><li>Candidate profile assessment</li><li>CV and role-fit guidance</li><li>Career experience design</li><li>Platform and product development</li></ul>
         </article>
       </section>
 
       <section className="name-story shell">
         <div><span className="eyebrow">The name</span><h2>Morgen is tomorrow.<br />Pilot is direction.</h2></div>
-        <div><p>Our clients are navigating different kinds of change, but both need the same things: a clear view, an experienced partner and the confidence to move.</p><p>MorgenPilot is not about taking over the controls. It is about helping you read the situation, choose the route and make the next move well.</p></div>
+        <div><p>Morgen means tomorrow. Pilot means someone who can read the route ahead. Together, the name describes what we want to offer every student and candidate: clearer next decisions.</p><p>MorgenPilot is not about taking over the controls. It is about helping you understand your options, prepare properly and make the next move with confidence.</p></div>
       </section>
 
-      <section className="practice-page-cta shell"><div><span className="eyebrow">Speak directly with us</span><h2>Meet the founder for your direction.</h2></div><Link href="/contact" className="button mp-primary-button">Start a conversation <ArrowUpRight size={18} /></Link></section>
+      <section className="practice-page-cta shell"><div><span className="eyebrow">Speak directly with us</span><h2>Tell us where you want Germany to take you.</h2></div><Link href="/contact" className="button mp-primary-button">Start a conversation <ArrowUpRight size={18} /></Link></section>
     </div>
   );
 }

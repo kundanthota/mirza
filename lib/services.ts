@@ -121,32 +121,6 @@ export const services: Service[] = [
       { title: "Real-world confidence", text: "Connect language learning to work and daily life." },
     ],
   },
-  {
-    slug: "engineering",
-    index: "05",
-    name: "Digital engineering",
-    short: "Engineering",
-    eyebrow: "Ideas built with technical discipline",
-    headline: "A senior technical partner, without the overhead.",
-    intro: "We help ambitious teams shape, build and improve digital products—from early architecture to dependable delivery.",
-    color: "#386a9c",
-    soft: "#dce8f1",
-    icon: "code",
-    stat: "End–end",
-    statLabel: "Product capability",
-    highlights: ["Web & software", "Data & AI", "Mobile products", "Technical strategy"],
-    steps: [
-      { number: "01", title: "Frame", text: "Clarify the problem, users and commercial constraints." },
-      { number: "02", title: "Design", text: "Shape the experience, system and delivery plan." },
-      { number: "03", title: "Build", text: "Create robust software with transparent progress." },
-      { number: "04", title: "Evolve", text: "Learn from real use and improve the product." },
-    ],
-    outcomes: [
-      { title: "Product clarity", text: "A sharper scope tied to outcomes that matter." },
-      { title: "Reliable delivery", text: "Pragmatic engineering and visible progress." },
-      { title: "Long-term thinking", text: "Technical decisions that support future growth." },
-    ],
-  },
 ];
 
 export function getService(slug: string) {

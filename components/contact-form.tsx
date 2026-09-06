@@ -13,7 +13,7 @@ export function ContactForm() {
       form.reportValidity();
       return;
     }
-    setMessage("Thanks—your message is ready for the right MorgenPilot practice.");
+    setMessage("Thanks—your message is ready for the MorgenPilot team.");
     form.reset();
   }
 
@@ -39,8 +39,11 @@ export function ContactForm() {
         <label htmlFor="service">I&apos;m interested in</label>
         <select id="service" name="service" defaultValue="">
           <option value="" disabled>Select a service</option>
-          <option value="study-career">Study &amp; Career</option>
-          <option value="ai-business">AI for Business</option>
+          <option value="bachelors">Bachelor&apos;s in Germany</option>
+          <option value="masters">Master&apos;s in Germany</option>
+          <option value="language">German language course</option>
+          <option value="jobs">Job guidance</option>
+          <option value="cv-audit">CV audit</option>
           <option value="partnership">Partnership</option>
           <option value="guidance">I&apos;m not sure yet</option>
         </select>

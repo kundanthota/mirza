@@ -37,6 +37,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /mirza
+          NEXT_PUBLIC_CV_AUDIT_ENDPOINT: ${{ vars.CV_AUDIT_ENDPOINT }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
